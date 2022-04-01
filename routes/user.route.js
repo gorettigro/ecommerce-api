@@ -29,9 +29,11 @@ router.post('/login', validateResult, loginUser)
 
 router.use(validateSession)
 
-router.route('/me', productCreatedByUser)
+router.get('/me', productCreatedByUser)
 
-router.route('/:id', userExists)
+router
+  .use('/:id', userExists)
+  .route('/:id')
 	.patch(accountOwner, validateResult, updateUser)
 	.delete(accountOwner, disableUserAccount)
 
