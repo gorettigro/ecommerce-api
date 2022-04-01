@@ -1,4 +1,4 @@
-const express = require('espress')
+const express = require('express')
 
 //Controllers
 const {
@@ -7,7 +7,7 @@ const {
     getProductById,
     updateProduct,
     disableProduct
-} = require('../controllers/products.controller')
+} = require('../controllers/product.controller')
 
 //Middlewares
 const { createProductValidations, 
