@@ -2,6 +2,7 @@ const express = require('express')
 
 //Controllers
 const {
+    getUserCart,
     addProductToCart,
     updateCart,
     purchaseOrder,

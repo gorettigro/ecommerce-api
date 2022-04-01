@@ -14,7 +14,7 @@ const { createProductValidations,
         validateResult } = require( '../middlewares/validators.middleware' )
 const { validateSession,
         productOwner} = require('../middlewares/auth.middleware')
-const { productExist } = require('../middlewares/product.middleware')
+const { productExists } = require('../middlewares/product.middleware')
 
 const router = express.Router()
 
@@ -26,7 +26,7 @@ router.route('/')
             validateResult,
             createProduct)
 
-router.use('/:id', productExist)
+router.use('/:id', productExists)
         .route('/:id')
         .get(getProductById)
         .patch(productOwner, updateProduct)

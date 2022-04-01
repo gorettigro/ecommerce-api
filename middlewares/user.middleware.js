@@ -21,13 +21,12 @@ exports.userExists = catchAsync(async (req, res, next) => {
   next();
 });
 
-exports.protectAccountOwner = catchAsync(async (req, res, next) => {
-  const { id } = req.params;
-  const { currentUser } = req;
-
-  if (currentUser.id !== +id) {
-    return next(new AppError(403, `You can't update other users accounts`));
-  }
-
-  next();
-});
+exports.accountOwner = catchAsync(async (req, res, next) => {
+  const { currentUser, product } = req;
+  
+  if (product.userId !== currentUser.id){
+    return next(new AppError(`Youre trying to edit someone else's account`, 500))
+  } 
+  
+  next()
+})

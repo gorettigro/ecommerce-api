@@ -59,12 +59,3 @@ exports.productOwner = catchAsync(async (req, res, next) => {
   next()
 })
 
-exports.accountOwner = catchAsync(async (req, res, next) => {
-  const { currentUser, product } = req;
-  
-  if (product.userId !== currentUser.id){
-    return next(new AppError(`Youre trying to edit someone else's account`, 500))
-  } 
-  
-  next()
-})
