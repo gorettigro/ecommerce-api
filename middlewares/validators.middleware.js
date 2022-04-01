@@ -1,7 +1,7 @@
 const { body, validationResult } = require('express-validator')
 
 // Utils
-const { AppError } = require('../utils/appError')
+const { AppError } = require('../util/appError')
 
 // User routes validations
 exports.createUserValidations = [

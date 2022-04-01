@@ -4,9 +4,9 @@ const { Product } = require('../models/product.model')
 const { User } = require('../models/user.model')
 
 // Utils
-const { catchAsync } = require("../utils/catchAsync")
-const { AppError } = require('../utils/appError')
-const { filterObj } = require('../utils/filterObj')
+const { catchAsync } = require("../util/catchAsync")
+const { AppError } = require('../util/appError')
+const { filterObj } = require('../util/filterObj')
 
 exports.createProduct = catchAsync(async (req, res, next) => {
     

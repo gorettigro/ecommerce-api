@@ -5,9 +5,9 @@ const { ProductInCart } = require('../models/productInCart.model')
 const { Order } = require('../models/order.model')
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync')
-const { filterObj } = require('../utils/filterObj')
-const { AppError } = require('../utils/appError')
+const { catchAsync } = require('../util/catchAsync')
+const { filterObj } = require('../util/filterObj')
+const { AppError } = require('../util/appError')
 
 exports.getUserCart = catchAsync(async (req, res, next) => {
 	const { currentUser } = req;

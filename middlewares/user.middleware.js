@@ -1,5 +1,5 @@
 // Models
-const { User } = require('../models/users.model');
+const { User } = require('../models/user.model');
 
 // Utils
 const { AppError } = require('../util/appError');

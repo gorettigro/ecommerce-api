@@ -4,9 +4,9 @@ const express = require('express');
 const { globalErrorHandler } = require('./controllers/error.controller');
 
 // Routers
-const { usersRouter } = require('./routes/users.routes');
-const { productRouter } = require('./routes/product.routes');
-const { cartRouter } = require('./routes/cart.routes');
+const { userRouter } = require('./routes/user.route');
+const { productRouter } = require('./routes/product.route');
+const { cartRouter } = require('./routes/cart.route');
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Endpoints
-app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/users', userRouter);
 app.use('/api/v1/product', productRouter);
 app.use('/api/v1/cart', cartRouter);
 

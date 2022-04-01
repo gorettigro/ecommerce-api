@@ -9,7 +9,7 @@ const {
     disableUserAccount,
     getAllOrders,
     getOrderById
-} = require('../controllers/users.controller')
+} = require('../controllers/user.controller')
 
 // Middlewares
 const { validateSession} = require('../middlewares/auth.middleware');
@@ -19,7 +19,7 @@ const { createUserValidations,
 const {
     userExists,
     accountOwner
-  } = require('../middlewares/users.middleware');
+  } = require('../middlewares/user.middleware');
 
 const router = express.Router()
 
